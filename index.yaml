@@ -3,12 +3,12 @@ entries:
   mysqlchart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-02-11T12:32:35.056116567+05:30"
+    created: "2020-02-11T13:01:11.687704575+05:30"
     description: A Helm chart for Kubernetes
-    digest: 0dc0501e3ab55c5ebfa331ecdb1229a6898f9728be7c98de85fc617f50eb55cd
+    digest: 40ce4d6d536ef437f724b6a79bc8f5039f7e2e11e3b1ba46a142992b0b86dde3
     name: mysqlchart
     type: application
     urls:
     - https://banwari-789.github.io/helmrepo/mysqlchart-0.1.0.tgz
     version: 0.1.0
-generated: "2020-02-11T12:32:35.054956726+05:30"
+generated: "2020-02-11T13:01:11.686779297+05:30"
