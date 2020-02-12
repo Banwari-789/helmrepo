@@ -1,9 +1,24 @@
 apiVersion: v1
 entries:
+  myappchart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-02-12T12:53:26.45488871+05:30"
+    dependencies:
+    - name: mysqlchart
+      repository: https://banwari-789.github.io/helmrepo/
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: f091194ea66ea9b1574c220a9f6596ae6408abd9f08019bbe3f9794e30184204
+    name: myappchart
+    type: application
+    urls:
+    - https://banwari-789.github.io/helmrepo/myappchart-0.1.0.tgz
+    version: 0.1.0
   mysqlchart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-02-11T13:01:11.687704575+05:30"
+    created: "2020-02-12T12:53:26.455736073+05:30"
     description: A Helm chart for Kubernetes
     digest: 40ce4d6d536ef437f724b6a79bc8f5039f7e2e11e3b1ba46a142992b0b86dde3
     name: mysqlchart
@@ -11,4 +26,4 @@ entries:
     urls:
     - https://banwari-789.github.io/helmrepo/mysqlchart-0.1.0.tgz
     version: 0.1.0
-generated: "2020-02-11T13:01:11.686779297+05:30"
+generated: "2020-02-12T12:53:26.450094342+05:30"
