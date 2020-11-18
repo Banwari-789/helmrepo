@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mysqlchart.fullname" . }}
+  labels:
+    {{- include "mysqlchart.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "mysqlchart.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "mysqlchart.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.image.repository }}
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: {{ .Values.env.MYSQL_ROOT_PASSWORD }}
+          ports:
+            - name: http
+              containerPort: 3306
+              protocol: TCP
+          volumeMounts:
+          - name: mysql-persistent-storage  
+            mountPath: /var/lib/mysql
+          - name: initdb
+            mountPath: /docker-entrypoint-initdb.d
+      volumes:                       
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: {{ template "mysqlchart.fullname" . }}-pvc
+      - name: initdb
+        configMap:
+          name: db-conf
